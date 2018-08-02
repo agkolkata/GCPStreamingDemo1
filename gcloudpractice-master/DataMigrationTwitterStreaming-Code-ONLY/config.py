@@ -6,7 +6,7 @@ from time import gmtime, strftime
 # bigquery.admin and storage.objectViewer
 
 '''gs-bg-migration i.e dynamic load'''
-PROJECT_ID ='warm-airline-207713'
+PROJECT_ID ='stream4gcp1'
 
 KEY_PATH = 'authkey1.json'
 
@@ -38,16 +38,18 @@ LOGGING_FILENAME = 'DoD-Project1-logs1.log'
 
 MASTER_TABLE = 'Donald_Trump_Tweets'
 
-STREAM_TABLE = 'Donald_Trump_Tweets_DS'
+STREAM_TABLE = 'Tweets_data'
 
 '''Twitter ETL start STREAM '''
 
 TRACK_TERMS = "brexit"
 
-TWITTER_APP_KEY = 'KPVEb25geZ1WUxMrJz3flS6je'
-TWITTER_APP_SECRET = 'BcjmYWEJmDuU81gwW3Hs64mnzH4I67EzgS0H5FfuIs7VFjkXtH'
-TWITTER_KEY = '1014592058215059456-Z1pGlZHdMvx8vsszkDWpsEdTCjfz4o'
-TWITTER_SECRET = 'Zsw17mh9OiXDfaf993njgHhGZHxYTHrrD9Ae8fgqEc1mq'
+TWITTER_APP_KEY = 'PF2CKc1XypBG308bLRSDNdJZn'
+TWITTER_APP_SECRET = '8oerydLYcMhr2nu5Fdk7dMqvmHgMLY7lUK3MtUrfzZNm08MC6q'
+#access key
+TWITTER_KEY = '139922961-pZ4ta92oPi64tkdZf4f6Qj5vJu5R1rxaI5LuD7Gc'
+#acces token secret
+TWITTER_SECRET = 'd7DyeVXXI35nPvdnyaHmlxVrEvj3ftWcj0n4p4wfeW7gY'
 
 
 time = strftime("%Y_%m_%d_%H_%M_%S", gmtime())

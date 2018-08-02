@@ -98,7 +98,7 @@ if __name__ == '__main__':
     topic_path = publisher.topic_path(config.PROJECT_ID, 'twitter-stream')
 
     '''Create initial topic'''
-    #publisher.create_topic(topic_path)
+    publisher.create_topic(topic_path)
 
 
     auth = tweepy.OAuthHandler(config.TWITTER_APP_KEY, config.TWITTER_APP_SECRET)

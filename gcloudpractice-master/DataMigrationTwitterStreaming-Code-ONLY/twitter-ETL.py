@@ -106,7 +106,7 @@ if __name__ == '__main__':
     api = tweepy.API(auth)
 
 
-    stream_listener = StreamListener(time_limit=5)
+    stream_listener = StreamListener(time_limit=10)
     stream = tweepy.Stream(auth=api.auth, listener=stream_listener)
     stream.filter(track=config.TRACK_TERMS)
 

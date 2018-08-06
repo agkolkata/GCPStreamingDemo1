@@ -34,7 +34,7 @@ def compute_sentiment(line):
     sent = TextBlob(tweet).sentiment.polarity
     templist.append(str(sent))
 
-    diction = dict(zip(['Username', 'Tweet', 'Time', 'Followers', 'Location', 'Source', 'Sentiment'], templist))
+    diction = dict(zip(['uName', 'uTweet', 'uTime', 'nFollowers', 'uLoc', 'dSource', 'uSentiment'], templist))
 
     return diction
 
@@ -49,7 +49,7 @@ def compute_sentiment(line):
         tweet = templist[1]
         sent = TextBlob(tweet).sentiment.polarity
         templist.append(sent) 
-        diction = dict(zip(['Username', 'Tweet', 'Time', 'Followers', 'Location', 'Source', 'Sentiment'], templist))
+        diction = dict(zip(['uName', 'uTweet', 'uTime', 'nFollowers', 'uLoc', 'dSource', 'uSentiment'], templist))
         return diction'''
         
         

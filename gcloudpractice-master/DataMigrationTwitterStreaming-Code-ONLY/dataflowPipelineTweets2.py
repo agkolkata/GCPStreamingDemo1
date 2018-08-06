@@ -14,8 +14,8 @@ options = PipelineOptions()
 
 google_cloud_options = options.view_as(GoogleCloudOptions)
 google_cloud_options.project = config.PROJECT_ID
-google_cloud_options.staging_location = 'gs://dod-mwja-project1/staging'
-google_cloud_options.temp_location = 'gs://dod-mwja-project1/temp'
+google_cloud_options.staging_location = 'gs://dod-mwja-project11/staging'
+google_cloud_options.temp_location = 'gs://dod-mwja-project11/temp'
 options.view_as(StandardOptions).runner = 'DataflowRunner'
 options.view_as(StandardOptions).streaming = True
 options.view_as(SetupOptions)
@@ -60,10 +60,10 @@ def run(argv=None):
 
     with beam.Pipeline(options=options, argv=pipeline_args) as p:
         # Read the pubsub topic into a PCollection.
-        lines = (p | beam.io.ReadStringsFromPubSub(topic='projects/warm-airline-207713/topics/twitter-stream')
+        lines = (p | beam.io.ReadStringsFromPubSub(topic='projects/stream4gcp1/topics/twitter-stream')
                    | beam.Map(compute_sentiment)
-                   | beam.io.WriteToBigQuery('warm-airline-207713:Tweets_raw.Donald_Trump_Tweets_D',
-                    schema='Username:STRING, Tweet:STRING, Time:TIMESTAMP, Followers:INTEGER, Location:STRING, Source:STRING, Sentiment:FLOAT',
+                   | beam.io.WriteToBigQuery('stream4gcp1:Tweets_raw.Tweets_data',
+                    schema='uName:STRING, uTweet:STRING, uTime:TIMESTAMP, nFollowers:INTEGER, uLoc:STRING, dSource:STRING, uSentiment:FLOAT',
                     create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
                     write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND))
 

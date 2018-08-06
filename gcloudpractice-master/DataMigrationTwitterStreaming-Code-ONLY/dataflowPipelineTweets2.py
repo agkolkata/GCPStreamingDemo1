@@ -62,7 +62,7 @@ def run(argv=None):
         # Read the pubsub topic into a PCollection.
         lines = (p | beam.io.ReadStringsFromPubSub(topic='projects/stream4gcp1/topics/twitter-stream')
                    | beam.Map(compute_sentiment)
-                   | beam.io.WriteToBigQuery('stream4gcp1:Tweets_raw.Tweets_data',
+                   | beam.io.WriteToBigQuery('stream4gcp1:Tweets_raw.Tweets_data1',
                     schema='uName:STRING, uTweet:STRING, uTime:TIMESTAMP, nFollowers:INTEGER, uLoc:STRING, dSource:STRING, uSentiment:FLOAT',
                     create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
                     write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND))
